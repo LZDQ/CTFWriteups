@@ -52,3 +52,7 @@ Note that this only works in glibc 2.39 not in glibc 2.41, because of `ldd` impl
 Think out of the box of using `ldd` to restrict dynamic library. The provided sample ELF is intentionally compiled with `rpath` set to `./lib`, but `rpath` is not present in the solution.
 
 Also almost always use the same version as in the challenge.
+
+## Credits
+
+Thanks P1G SEKAI for discussing the solution.
