@@ -1,0 +1,6 @@
+*.o
+*.i
+*.s
+*.o
+*.hexproj
+main
