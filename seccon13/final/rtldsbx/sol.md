@@ -45,7 +45,7 @@ If we run `exp` now it will throw a segmentation fault, but that's not a big dea
 
 which is exactly the whitelist but doesn't resolves to `./lib`. Then, modify the 8-th byte in the ELF header (also 8 byte into the file) from `03` to `00` to match the magic number, and patch the entrypoint with execve assembly. This will be the ELF submitted to the server.
 
-Note that this only works in glibc 2.39 not in glibc 2.41, because of `ldd` implementation. The official solution works in both versions.
+Note that this only works in glibc 2.39 not in glibc 2.41. The official solution works in both versions.
 
 ## Takeaways
 
@@ -56,3 +56,7 @@ Also almost always use the same version as in the challenge.
 ## Credits
 
 Thanks P1G SEKAI for discussing the solution.
+
+## Official sol
+
+The official solution adds another interpreter in the program header. As `mean elf` says, there should be only one interpreter in the program headers. If we add another one after all the important ones for runtime, `ldd` will take into accounts of the last one interpreter, but when it gets executed, only the first one is used.

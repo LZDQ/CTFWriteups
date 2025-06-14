@@ -122,4 +122,24 @@ For this type, the linker will minus the target address by the current address a
 
 ## Runtime
 
+The interpreter, `ld` means loader/dynamic linker, which dynamically loads shared libraries and resolves symbols and manage GOT PLT.
+
+### Dynamic[ relocation]
+
+The section `.dynamic` contains information about dynamic linking. Refer to "Dynamic tags" in `man elf`.
+
+```c
+typedef struct {
+    Elf64_Sxword    d_tag;
+    union {
+        Elf64_Xword d_val;
+        Elf64_Addr  d_ptr;
+    } d_un;
+} Elf64_Dyn;
+```
+
+TODO
+
+### GOT & PLT
+
 TODO
