@@ -59,4 +59,4 @@ Thanks P1G SEKAI for discussing the solution.
 
 ## Official sol
 
-The official solution adds another interpreter in the program header. As `mean elf` says, there should be only one interpreter in the program headers. If we add another one after all the important ones for runtime, `ldd` will take into accounts of the last one interpreter, but when it gets executed, only the first one is used.
+The official solution adds another interpreter in the program header. As `man elf` says, there should be only one interpreter in the program headers. If we add another one after all the important ones for runtime, `ldd` will take into accounts of the last one interpreter, but when it gets executed, only the first one is used.
